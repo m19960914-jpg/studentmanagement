@@ -30,18 +30,20 @@ public static void main(String[] args){
     @GetMapping("/student")
     public String getStudent(@RequestParam String name) {
         Student student = repository.SearchByName(name);
-        return student.getName() + "　" + student.getAge() + "sai";
+        return student.getName() + "　" + student.getAge() + "sai"+ student.getGender() ;
     }
 
 
     @PostMapping("/student")
-    public  void registerStudent(String name, int age) {
-    repository.registerStudent(name,age);
+    public  void registerStudent(String name, int age,int grade)
+    {
+    repository.registerStudent(name,age,grade);
 }
 
     @PatchMapping ("/student")
-    public  void  updateStudent(String name,int age) {
-        repository.updateStudent(name,age);
+    public  void  updateStudent(String name,int age,int grade)
+    {
+        repository.updateStudent(name,age,grade);
     }
 
   @DeleteMapping("/student")
