@@ -7,20 +7,20 @@ import java.util.List;
 @Mapper
 public interface StudentRepository {
 
-    @Select("select * from student where name =#{name}")
+    @Select("select * from students where name =#{name}")
     Student SearchByName(String name);
 
 
 
-    @Insert("insert student values (#{name},#{age})")
-    void registerStudent(String name, int age);
+    @Insert("insert students values (#{name},#{age},#{grade})")
+    void registerStudent(String name, int age,int grade);
 
-    @Update("update student set age = #{age} where name = #{name}")
-          void updateStudent(String name, int age);
+    @Update("update students set age = #{age} ,grade = #{grade} where name = #{name}")
+          void updateStudent(String name, int age,int grade);
 
-    @Delete("delete from  student  where name = #{name}")
+    @Delete("delete from  students  where name = #{name}")
     void deleteStudent(String name);
-    @Select("select * from student")
+    @Select("select * from students")
     List<Student> searchAll();
 
 }
