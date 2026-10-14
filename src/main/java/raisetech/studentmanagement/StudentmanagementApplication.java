@@ -1,7 +1,10 @@
 package raisetech.studentmanagement;
 
+import java.util.Arrays;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,26 +30,18 @@ public static void main(String[] args){
     @GetMapping("/student")
     public String getStudent(@RequestParam String name) {
         Student student = repository.SearchByName(name);
-        return student.getName() + "　" + student.getAge() + "sai"+ student.getGender() ;
+        return student.getName() + "　" + student.getAge() + "sai";
     }
 
 
     @PostMapping("/student")
-    public  void registerStudent(String name, int age,int id,String kana,String nickname,String email,String region,String gender)
-    {
-    repository.registerStudent(name,age,id, student_id, course_name, start_date, end_date);
+    public  void registerStudent(String name, int age) {
+    repository.registerStudent(name,age);
 }
 
-    @PostMapping("/students_c")
-    public  void registerStudentC(String name, int age,int id, int student_id , String course_name,localdate start_date,localdate end_date )
-    {
-        repository.registerStudent(name,age,id,student_id ,course_name,start_date,end_date);
-    }
-
     @PatchMapping ("/student")
-    public  void  updateStudent(String name,int age,int grade)
-    {
-        repository.updateStudent(name,age,grade);
+    public  void  updateStudent(String name,int age) {
+        repository.updateStudent(name,age);
     }
 
   @DeleteMapping("/student")
