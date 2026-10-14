@@ -13,7 +13,10 @@ public interface StudentRepository {
 
 
     @Insert("insert students values (#{name},#{age},#{grade})")
-    void registerStudent(String name, int age,int grade);
+    void registerStudent(String name, int age, int grade, int student_id, String course_name, localdate start_date, localdate end_date);
+
+    @Insert("insert students_courses values (#{name},#{age},#{id}, #｛student_id｝,#｛ course_name},)")
+    void registerStudent(String name, int age, int id, int studentId, string courseName, localdate startDate, localdate endDate);
 
     @Update("update students set age = #{age} ,grade = #{grade} where name = #{name}")
           void updateStudent(String name, int age,int grade);
@@ -22,5 +25,7 @@ public interface StudentRepository {
     void deleteStudent(String name);
     @Select("select * from students")
     List<Student> searchAll();
+
+
 
 }
