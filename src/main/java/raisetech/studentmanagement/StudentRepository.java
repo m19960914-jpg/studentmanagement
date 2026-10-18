@@ -11,7 +11,6 @@ public interface StudentRepository {
     Student SearchByName(String name);
 
 
-
     @Insert("insert student values (#{name},#{age})")
     void registerStudent(String name, int age);
 
