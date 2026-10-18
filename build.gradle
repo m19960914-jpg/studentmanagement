@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'war'
-	id 'org.springframework.boot' version '4.1.1'
+	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -19,9 +19,17 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	//apache commons lang
 	implementation  'org.apache.commons:commons-lang3:3.20.0'
+	//mysql ドライバ
+	runtimeOnly 'com.mysql:mysql-connector-j'
+  //mybatis
+	implementation'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
