@@ -53,5 +53,10 @@ public static void main(String[] args){
     public List<Student> getStudentList() {
         return repository.searchAll(); // Mapperを呼び出して全員分のリストをそのまま返す
     }
+    @GetMapping("/students_courseList")
+    public List<students_courses> getStudent_courseList() {
+        return repository.searchAllCourses(); // Mapperを呼び出して全員分のリストをそのまま返す
+    }
+
 }
 
