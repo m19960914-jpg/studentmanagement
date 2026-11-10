@@ -11,7 +11,6 @@ public interface StudentRepository {
     Student SearchByName(String name);
 
 
-
     @Insert("insert student values (#{name},#{age})")
     void registerStudent(String name, int age);
 
@@ -23,4 +22,6 @@ public interface StudentRepository {
     @Select("select * from student")
     List<Student> searchAll();
 
+    @Select("select * from students_courses")
+    List<students_courses> searchAllCourses();
 }

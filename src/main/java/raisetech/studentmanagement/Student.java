@@ -12,7 +12,6 @@ public class Student {
     private String  region;
     private String  gender;
 
-
     public String getName() {
         return name;
     }
