@@ -1,25 +1,19 @@
 package raisetech.studentmanagement;
 
-import java.util.Arrays;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
+import raisetech.studentmanagement.data.Student;
+import raisetech.studentmanagement.data.Students_Courses;
+import raisetech.studentmanagement.repository.StudentRepository;
 
 @SpringBootApplication
 
 @RestController
 public class StudentmanagementApplication {
-
-    @Autowired
-    private StudentRepository repository;
-
-
-
 
     public static void main(String[] args){
         //localhost:8080
@@ -27,7 +21,7 @@ public class StudentmanagementApplication {
 
     }
 
-    @GetMapping("/student")
+  /*  @GetMapping("/student")
     public String getStudent(@RequestParam String name) {
         Student student = repository.SearchByName(name);
         return student.getName() + "　" + student.getAge() + "sai";
@@ -48,14 +42,6 @@ public class StudentmanagementApplication {
     public   void deleteStudent(String name) {
         repository.deleteStudent(name);
     }
-
-    @GetMapping("/studentList")
-    public List<Student> getStudentList() {
-        return repository.searchAll(); // Mapperを呼び出して全員分のリストをそのまま返す
-    }
-    @GetMapping("/students_courseList")
-    public List<students_courses> getStudent_courseList() {
-        return repository.searchAllCourses(); // Mapperを呼び出して全員分のリストをそのまま返す
-    }
+*/
 
 }
